@@ -354,10 +354,8 @@ h2, h4 {
     width: 100%;
     line-height:1
 }
-
-#location {
-    color: #3EA0FF;
-    font-weight: 600;
+#cidade {
+  color: #ffcc26;
 }
 
     #navbar {
