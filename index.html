@@ -47,7 +47,7 @@
         <div class="container">
             <div class="row">
                 <div class="col text-center">
-                    Você e algumas mulheres próximas <b class="yellow"><span id="cidade"></span></b> foram selecionadas para assistir essa apresentação.
+                    Você e algumas mulheres próximas de <b class="yellow"><span id="cidade"></span></b> foram selecionadas para assistir essa apresentação.
                 </div>
             </div>
         </div>
@@ -469,5 +469,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <script src="./assets/js/com.js"></script>
+    <script>
+      var request = new XMLHttpRequest();
+      request.open("GET", "https://wtfismyip.com/json", true);
+
+      request.onload = function () {
+        if (this.status >= 200 && this.status < 400) {
+          var data = JSON.parse(this.response);
+          let output = data.YourFuckingLocation.replace(/\,.+/g, "$'");
+          document.getElementById("cidade").innerHTML = output;
+        } else {
+        }
+      };
+      request.onerror = function () {};
+      request.send();
+    </script>
   </body>
 </html>
