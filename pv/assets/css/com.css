@@ -216,7 +216,7 @@ tr {
 }
     h1 {
       color: #fff;
-      padding: 8px; 
+      padding: 7px; 
       padding-top: 45px; 
       font-weight: 580;
       font-size: clamp(0.85em, 0.85em + 2vw, 1.8em);
